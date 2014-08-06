@@ -85,7 +85,7 @@ class NSMap(object):
 				yield u"-", key, da[key]
 				yield u"+", key, db[key]
 		for key in sorted(set(db) - set(da)):
-			yield u"+", key, da[key]
+			yield u"+", key, db[key]
 
 		if push:
 			self.a.append(ta)
@@ -211,7 +211,7 @@ def _wrapElementDiff(fmt, a, b, nsmap):
 	delta = []
 	for prefix, key, value in ns_attr:
 		if prefix != u" ":
-			delta.append(prefix, u"  " + _fmtNsAttr(key, value))
+			delta.append((prefix, u"  " + _fmtNsAttr(key, value)))
 	for attr in sorted(diff_attr | a_only_attr | b_only_attr):
 		if attr in (a_only_attr | diff_attr):
 			delta.append((u"-", u"  " + _fmtAttr(attr, a.get(attr), a, nsmap)))
