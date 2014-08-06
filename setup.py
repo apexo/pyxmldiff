@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
 	name='pyxmldiff',
-	version='0.1.0',
+	version='0.1.1',
 	description='yet another XML diff tool',
 	license='GPLv3',
 	author='Christian Schubert',
