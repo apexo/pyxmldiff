@@ -109,7 +109,7 @@ class NSMap(object):
 def is_element(v):
 	return isinstance(v, Element)
 
-if sys.version_info.major > 2:
+if sys.version_info[0] > 2:
 	escape_attrib = lambda v: v.translate(TRANSLATE_ATTRIB)
 	escape_cdata = lambda v: v.translate(TRANSLATE_CDATA)
 	encode = lambda v: v.encode("UTF-8")
